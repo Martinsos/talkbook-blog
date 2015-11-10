@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <ul class="post-list js-masonry" data-masonry-options='{"itemSelector": ".grid-item"}'>
+    {% for post in site.posts %}
+      <li class="grid-item">
+          <a href="{{ post.url | prepend: site.baseurl }}">
+              <div class="post-container random-color">
+                  <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+                  <h2>
+                      <span class="post-title">{{ post.title }}</span>
+                  </h2>
+
+                  {{ post.excerpt }}
+              </div>
+          </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>

@@ -1,0 +1,58 @@
+<footer class="site-footer">
+
+    <div class="wrapper">
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col  footer-col-1">
+                <ul class="contact-list">
+                    <li>{{ site.title }}</li>
+                    <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col  footer-col-2">
+                <ul class="resource-list">
+                    <li>
+                        <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
+                            <img class="icon" src="{{ site.baseurl }}/images/icons/rss.png">
+                            <span class="text">RSS feed</span>
+                        </a>
+                    </li>
+
+                    {% if site.github_username %}
+                    <li>
+                        <a href="https://github.com/{{ site.github_username }}">
+                            <img class="icon" src="{{ site.baseurl }}/images/icons/github.png">
+                            <span class="text">{{ site.github_username }}</span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% if site.twitter_username %}
+                    <li>
+                        <a href="https://twitter.com/{{ site.twitter_username }}">
+                            <img class="icon" src="{{ site.baseurl }}/images/social-icons/Twitter.png">
+                            <span class="text">{{ site.twitter_username }}</span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                    {% if site.linkedin_username %}
+                    <li>
+                        <a href="http://linkedin.com/in/{{ site.linkedin_username }}">
+                            <img class="icon" src="{{ site.baseurl }}/images/social-icons/LinkedIn.png">
+                            <span class="text">{{ site.linkedin_username }}</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+
+            <div class="footer-col  footer-col-3">
+                <p class="text">{{ site.description }}</p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>

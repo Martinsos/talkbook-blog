@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    {% include social-share.html %}
+  </header>
+
+  <article class="post-content">
+    {{ content }}
+  </article>
+
+  <div>
+    {% include social-share.html %}
+  </div>
+
+  <br>
+  {% include disqus.html %}
+
+  <script>
+   (function() {
+       ga('send', 'event', 'post', 'open', '{{ page.id }}', {'nonInteraction': 1});
+   })();
+  </script>
+</div>
