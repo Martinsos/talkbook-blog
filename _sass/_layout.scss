@@ -2,9 +2,9 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
+    min-height: 60px;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -174,45 +174,40 @@ $post-item-margin: 2px;
 .post-list {
     margin-left: 0;
     list-style: none;
-
-    > li {
-        margin: $post-item-margin;
-        display: inline;
-        max-width: -webkit-calc((#{$content-width} - (#{$spacing-unit} * 2)) / 3 - 2 * #{$post-item-margin});
-        max-width:         calc((#{$content-width} - (#{$spacing-unit} * 2)) / 3 - 2 * #{$post-item-margin});
-    }
-
-    .post-container {
-        display: inline-block;
-        padding: 10px;
-
-        .post-title {
-          font-size: 30px;
+    color: black;
+    li {
+        text-align: center;
+        h2.post-title {
+            margin: 25px 0px;
+            font-size: 28px;
+            a {
+                color: black;
+                &:hover {
+                    opacity: 0.7;
+                    text-decoration: none;
+                }
+            }
         }
-
-        color: white;
-        .post-title {
-          color: white;
+        .post-content {
+            color: #5c666f;
+            font-size: 18px;
         }
-        .post-meta {
-          color: white;
-        }
-
-        &.red {
-          background-color: #FD728E;
-        }
-        &.blue {
-          background-color: #728EFD;
-        }
-        &.green {
-          background-color: #69B022;
-        }
-
-        transition: transform 0.5s;
-
-        &:hover {
-          -webkit-transform: perspective(1000px) rotateY(15deg) rotateX(15deg); /* Chrome, Safari, Opera */
-          transform: perspective(1000px) rotateY(15deg) rotateX(15deg);
+        .post-info {
+            font-size: 16px;
+            color: #5c666f;
+            opacity: 0.7;
+            margin-bottom: 40px;
+            .author {
+                float: left;
+                width: percentage(1/2);
+                text-align: left;
+                display: block;
+            }
+            .date {
+                float: left;
+                width: percentage(1/2);
+                text-align: right;
+            }
         }
     }
 }
