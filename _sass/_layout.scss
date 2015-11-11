@@ -7,6 +7,7 @@ $talkbook-blue: rgb(0, 155, 255);
     border-bottom: 1px solid $grey-color-light;
     min-height: 60px;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
+    padding: 0px 30px;
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -46,7 +47,9 @@ $talkbook-blue: rgb(0, 155, 255);
     }
 
     .page-link {
-        color: $text-color;
+        color: $talkbook-blue;
+        font-weight: normal;
+        font-size: 16px;
         line-height: $base-line-height;
 
         // Gaps between nav items, but not on the first one

@@ -1,7 +1,5 @@
 <header class="site-header">
 
-  <div class="wrapper">
-
       <a class="logo" href="http://talkbook.co/#/home">
           <img src="{{ site.baseurl }}/images/logo80.png">
           <b>Talk</b>Book
@@ -17,14 +15,10 @@
       </a>
 
       <div class="trigger">
-        {% for page in site.pages %}
-          {% if page.title %}
-          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-          {% endif %}
-        {% endfor %}
+          <a class="page-link" href="http://talkbook.co/#/home">Product</a>
+          <a class="page-link" href="http://talkbook.co/#/home#pricing">Pricing</a>
+          <a class="page-link" href="http://talkbook.co/#/home#contact">Contact</a>
       </div>
     </nav>
-
-  </div>
 
 </header>
