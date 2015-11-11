@@ -1,4 +1,10 @@
 $talkbook-blue: rgb(0, 155, 255);
+$talkbook-dark-blue: #1756a9;
+
+a:hover {
+    opacity: 0.8;
+    text-decoration: none;
+}
 
 /**
  * Site header
@@ -8,6 +14,7 @@ $talkbook-blue: rgb(0, 155, 255);
     min-height: 60px;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
     padding: 0px 30px;
+    font-size: 22px;
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -16,11 +23,19 @@ $talkbook-blue: rgb(0, 155, 255);
         text-decoration: none;
         color: $talkbook-blue;
         font-weight: 300;
-        font-size: 22px;
+
         line-height: 60px;
         img {
             width: 32px;
             height: 32px;
+        }
+    }
+
+    .blog {
+        color: $talkbook-dark-blue;
+        font-weight: 300;
+        &:hover {
+            text-decoration: none;
         }
     }
 }
