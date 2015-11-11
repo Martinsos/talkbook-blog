@@ -16,7 +16,7 @@ layout: default
               {{ post.excerpt }}
           </div>
           <div class="post-info">
-              <div class="author">{{ post.author }} &nbsp;</div>
+              <div class="author">{% include author.html author=post.author %} &nbsp;</div>
               <div class="date">{{ post.date | date: "%b %-d, %Y" }}</div>
           </div>
       </li>
