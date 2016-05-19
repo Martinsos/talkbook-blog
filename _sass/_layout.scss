@@ -1,44 +1,76 @@
 $talkbook-blue: rgb(0, 155, 255);
 $talkbook-dark-blue: #1756a9;
+$text: #484a66;
 
 a:hover {
     opacity: 0.8;
     text-decoration: none;
 }
 
-/**
- * Site header
- */
-.site-header {
-    border-bottom: 1px solid $grey-color-light;
-    min-height: 60px;
-    box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
-    padding: 0px 30px;
-    font-size: 22px;
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #d8d8d8;
+    margin: 1.7em 0;
+    padding: 0;
+}
 
-    // Positioning context for the mobile navigation icon
-    position: relative;
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    //padding: 0 15px;
+    width: 100%;
+}
 
-    .logo {
-        text-decoration: none;
-        color: $talkbook-blue;
-        font-weight: 300;
+.tb-navbar {
+    background-color: white;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    letter-spacing: -0.05em;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.20);
 
-        line-height: 60px;
-        img {
-            width: 32px;
-            height: 32px;
+    ul.main-nav {
+        font-family: Roboto, sans-serif;
+        padding-left: 30px;
+        height: 45px;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        .blog-title {
+            font-size: 28px;
+            font-weight: 300;
+            a {
+                color: rgb(37, 163, 235);
+            }
         }
-    }
-
-    .blog {
-        color: $talkbook-dark-blue;
-        font-weight: 300;
-        &:hover {
-            text-decoration: none;
+        .logo {
+            color: $text;
+            margin-right: 30px;
+            font-weight: 300;
+            //font-size: 2.2rem;
+            font-size: 22px;
+            position: relative;
+            padding-left: 37px;
+            &:before {
+                content: '';
+                background-image: url('/images/logo80.png');
+                background-size: 100%;
+                background-repeat: no-repeat;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 32px;
+                height: 32px;
+                //width: 3.2rem;
+                //height: 3.2rem;
+            }
         }
     }
 }
+
 
 .site-title {
     font-size: 26px;
@@ -206,24 +238,19 @@ $post-item-margin: 2px;
 .post-list {
     margin-left: 0;
     list-style: none;
-    color: black;
     li {
         text-align: center;
         h2.post-title {
-            margin: 25px 0px;
-            font-size: 28px;
+            font-weight: 500;
             a {
-                color: black;
+                color: $text-color;
                 &:hover {
                     opacity: 0.7;
                     text-decoration: none;
                 }
             }
         }
-        .post-content {
-            color: #5c666f;
-            font-size: 18px;
-        }
+
         .post-info {
             font-size: 16px;
             color: #5c666f;
@@ -255,8 +282,46 @@ $post-item-margin: 2px;
 }
 
 .post-meta {
+    text-align: center;
+    margin-top: 22px;
     font-size: $small-font-size;
-    opacity: 0.7;
+    opacity: 0.9;
+
+
+    .photo {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: inline;
+        margin-right: 5px;
+        position: relative;
+    }
+}
+
+.post-remark {
+    font-size: 0.9em;
+    opacity: 0.9;
+    text-decoration: underline;
+}
+
+.post-image {
+    margin: 1.5em 2.2em;
+    overflow: hidden;
+
+    .img {
+        border: 5px solid #ddd;
+        max-height: 500px;
+        overflow: hidden;
+    }
+
+    .img-label {
+        font-size: $small-font-size;
+        text-align: center;
+    }
+
+    &:hover {
+        opacity: 0.9;
+    }
 }
 
 .post-link {
@@ -265,48 +330,31 @@ $post-item-margin: 2px;
 }
 
 
-
-/**
- * Posts
- */
-.post-header {
-    margin-bottom: $spacing-unit;
-}
-
 .post-title {
-    font-size: 42px;
+    font-size: 1.7em;
     letter-spacing: -1px;
     line-height: 1;
+}
 
-    @include media-query($on-laptop) {
-        font-size: 36px;
-    }
+.post-excerpt {
+    font-size: 0.9em;
+    margin-bottom: 12px;
 }
 
 .post-content {
-    margin-bottom: $spacing-unit;
-
     h2 {
-        font-size: 32px;
-
-        @include media-query($on-laptop) {
-            font-size: 28px;
-        }
+        font-size: 1.6em;
     }
 
     h3 {
-        font-size: 26px;
-
-        @include media-query($on-laptop) {
-            font-size: 22px;
-        }
+        text-align: center;
+        font-size: 1.40em;
+        color: #5b787f;
+        padding-top: $spacing-unit * 1.2;
+        font-weight: 500;
     }
 
     h4 {
-        font-size: 20px;
-
-        @include media-query($on-laptop) {
-            font-size: 18px;
-        }
+        font-size: 1.1em;
     }
 }
