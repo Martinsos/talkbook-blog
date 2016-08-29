@@ -9,6 +9,7 @@ image:
   feature: "collect.jpg"
   hide_title: true
 categories: "speaking"
+keywords: [email address, live, audience, speaking, collect]
 ---
 
 ### Why collect email addresses at your speaking gig?

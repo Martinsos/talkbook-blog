@@ -4,18 +4,20 @@
   @param author: author key
 -->
 
-<figure class="post-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    {% if include.author %}
-      {% assign author = site.data.authors[include.author] %}{% else %}{% assign author = site.owner %}
-    {% endif %}
-    {% if author.avatar contains 'http' %}
-      {% assign authorImageSrc = author.avatar %}
-    {% else %}
-      {% capture authorImageSrc %}{{ site.baseurl }}/images/{{ author.avatar }}{% endcapture %}
-    {% endif %}
-    <img src="{{ authorImageSrc }}" class="photo" width="56" height="56"
-         alt="{{ author.name }} photo" itemprop="image">
-    <span itemprop="name" class="name">
-        {{ author.name }}
-    </span>
-</figure>
+{% if include.author %}
+{% assign author = site.data.authors[include.author] %}{% else %}{% assign author = site.owner %}
+{% endif %}
+{% if author.avatar contains 'http' %}
+{% assign authorImageSrc = author.avatar %}
+{% else %}
+{% capture authorImageSrc %}{{ site.baseurl }}/images/{{ author.avatar }}{% endcapture %}
+{% endif %}
+<a href="{{ author.web }}" target="_blank">
+    <figure class="post-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <img src="{{ authorImageSrc }}" class="photo" width="56" height="56"
+             alt="{{ author.name }} photo" itemprop="image">
+        <span itemprop="name" class="name">
+            {{ author.name }}
+        </span>
+    </figure>
+</a>

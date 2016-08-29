@@ -1,61 +1,55 @@
 ---
 layout: default
 ---
-<div class="post">
+<div class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    {% if page.keywords %}
+    <meta itemprop="keywords" content="{{ page.keywords | join: ',' }}" />
+    {% endif %}
+    <meta itemprop="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}" />
 
-  <header class="post-header">
+    <meta content="article" property="og:type">
+    <meta content="{{ page.title }}" property="og:title">
+    <meta content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}" property="og:description">
+    <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
+    <meta content="{{ site.baseurl }}/images/{{ page.image.feature }}" property="og:image">
 
-    <div class="img">
-        <figure class="wrap">
-            <img src="{{ site.baseurl }}/images/{{ page.image.feature }}" alt="{{ page.title }}" itemprop="image">
-        </figure>
+    <header class="post-header">
+
+        <div class="img" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+            <figure class="wrap">
+                <img src="{{ site.baseurl }}/images/{{ page.image.feature }}" alt="{{ page.title }}"
+                     itemprop="url"
+                     style="margin: auto;">
+            </figure>
+        </div>
+
+        {% unless page.image.hide_title %}
+        <h1 class="post-title" itemprop="headline">{{ page.title }}</h1>
+        {% endunless %}
+
+        <div class="post-meta">
+
+            {% include author.html author=page.author %}
+
+            <span>
+                wrote this on
+            </span>
+
+            <time itemprop="datePublished" datetime="{{ page.date | date: '%Y-%m-%d' }}"">
+                {{ page.date | date: "%b %-d, %Y" }}
+            </time>
+        </div>
+    </header>
+
+    <article class="post-content" itemprop="articleBody">
+        {{ content }}
+    </article>
+
+    <div>
+        {% include social-share.html %}
     </div>
 
-    {% unless page.image.hide_title %}
-        <h1 class="post-title">{{ page.title }}</h1>
-    {% endunless %}
+    <br>
+    {% include disqus.html %}
 
-    {% if page.author %}
-      {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %}
-    {% endif %}
-
-    {% if author.avatar contains 'http' %}
-      {% assign authorImageSrc = author.avatar %}
-    {% else %}
-      {% capture authorImageSrc %}{{ site.baseurl }}/images/{{ author.avatar }}{% endcapture %}
-    {% endif %}
-
-    <div class="post-meta">
-
-        <img src="{{ authorImageSrc }}" class="photo" width="70" height="70"
-            alt="{{ author.name }} photo" itemprop="image">
-        <span itemprop="name" class="name">
-            {{ author.name }}
-        </span>
-        <span>
-            wrote this on
-        </span>
-
-        <span>
-        {{ page.date | date: "%b %-d, %Y" }}
-        </span>
-    </div>
-  </header>
-
-  <article class="post-content">
-    {{ content }}
-  </article>
-
-  <div>
-    {% include social-share.html %}
-  </div>
-
-  <br>
-  {% include disqus.html %}
-
-  <script>
-   (function() {
-       ga('send', 'event', 'post', 'open', '{{ page.id }}', {'nonInteraction': 1});
-   })();
-  </script>
 </div>

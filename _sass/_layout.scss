@@ -235,6 +235,10 @@ hr {
 
 $post-item-margin: 2px;
 
+.post-author {
+    display: inline-block;
+}
+
 .post-list {
     margin-left: 0;
     list-style: none;
@@ -334,6 +338,9 @@ $post-item-margin: 2px;
     font-size: 1.7em;
     letter-spacing: -1px;
     line-height: 1;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .post-excerpt {
@@ -356,5 +363,9 @@ $post-item-margin: 2px;
 
     h4 {
         font-size: 1.1em;
+    }
+
+    p {
+        word-wrap: break-word;
     }
 }

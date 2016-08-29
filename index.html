@@ -6,19 +6,25 @@ layout: default
 
   <ul class="post-list">
     {% for post in site.posts %}
-      <li>
+      <li itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
           <h2 class="post-title">
-              <a href="{{ post.url | prepend: site.baseurl }}">
-                  {{ post.title }}
+              <a href="{{ post.url | prepend: site.baseurl }}" itemprop="url">
+                  <span itemprop="headline">{{ post.title }}</span>
               </a>
           </h2>
-          <div class="post-excerpt">
+          <div class="post-excerpt" itemprop="description">
               {{ post.excerpt }}
           </div>
+
           <div class="post-info">
               <div class="author">{% include author.html author=post.author %} &nbsp;</div>
-              <div class="date">{{ post.date | date: "%b %-d, %Y" }}</div>
+              <div class="date">
+                  <time itemprop="datePublished" datetime="{{ post.date | date_to_xmlschema }}">
+                      {{ post.date | date: "%b %-d, %Y" }}
+                  </time>
+              </div>
           </div>
+          <div style="clear: both;"></div>
       </li>
     {% endfor %}
   </ul>

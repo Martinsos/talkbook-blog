@@ -2,21 +2,21 @@
 <span class="social-share-facebook">
     <a href="https://www.facebook.com/sharer/sharer.php?u={{ pageUrlAbsolute | url_encode }}"
        onclick="return !window.open(this.href, 'Share on Facebook', 'width=700,height=500')"
-       title="Share on Facebook" itemprop="Facebook">
+       title="Share on Facebook">
         <img src="{{ site.baseurl }}/images/social-icons/Facebook.png">
     </a>
 </span>
 <span class="social-share-twitter">
     <a href="https://twitter.com/intent/tweet?hashtags={{ page.tags | join: ',' | remove: ' ' }}&amp;text={{ page.title | escape | replace:' ','%20' }}&amp;url={{ pageUrlAbsolute | url_encode }}{% if author.twitter %}&amp;via={{ author.twitter }}{% endif %}"
        onclick="return !window.open(this.href, 'Share on Twitter', 'width=700,height=500')"
-       title="Share on Twitter" itemprop="Twitter">
+       title="Share on Twitter">
         <img src="{{ site.baseurl }}/images/social-icons/Twitter.png">
     </a>
 </span>
 <span class="social-share-googleplus">
     <a href="https://plus.google.com/share?url={{ pageUrlAbsolute | url_encode }}"
        onclick="return !window.open(this.href, 'Share on Google Plus', 'width=700,height=500')"
-       title="Share on Google Plus" itemprop="GooglePlus">
+       title="Share on Google Plus">
         <img src="{{ site.baseurl }}/images/social-icons/Google+.png">
     </a>
 </span>
